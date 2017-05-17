@@ -1,0 +1,200 @@
+@charset "UTF-8";
+/**
+ * @desc 去掉单位
+ */
+/**
+ * @desc 将一个值转成rem
+ */
+/**
+ * @desc 将一个或者多个px值转成rem
+ */
+/**
+ * @desc 获取列表第一个
+ */
+/**
+ * @desc 获取列表最后一个
+ */
+/**
+ * @desc 向列表前面插入
+ */
+/**
+ * @desc 向列表指定位置插入
+ */
+/**
+ * @desc 替换列表的某个元素 $recursive 是否全部替换
+ */
+/**
+ * @desc 替换列表某个位置
+ */
+/**
+ * @desc 删除列表某个元素 $recursive 是否删除所有
+ */
+/**
+ * @desc 删除列表指定位置元素
+ */
+/**
+ * @desc 截取列表中的一部分
+ */
+/**
+ * @desc 列表变成字符串
+ */
+/**
+ * @desc 将列表部分元素前置
+ */
+/**
+ * @desc 列表是否存在
+ */
+/**
+ * @desc 字符串分隔
+ */
+/**
+ * @desc 字符串重复
+ */
+/**
+ * @desc 字符串替换
+ */
+/*!
+ *  Fonts.css -- Cross-platform Chinese fonts solution
+ *
+ *  Copyright (C) 2013-2015 Zeno Zeng
+ *  Released under the MIT license
+ *
+ *  Github: https://github.com/zenozeng/fonts.css
+ */
+/**
+ * @param $line       超出显示省略号的行数，默认：1
+ * @param $substract  为预留区域百分比%，默认：0
+ */
+/**
+ * @param $property       css属性
+ * @param $values         css属性值
+ * @param $support-ie     是否对不支持rem的浏览器使用px
+ * @param $base           基准字体大小，如果不传会搜索全局变量 $base-font，如果没有默认为 16px
+ */
+/**
+ * @desc  绘制箭头 http://lugolabs.com/caret
+ * @param $width
+ * @param $border-width
+ * @param $direction: top bottom left right
+ * @param $background-color
+ * @param $position 默认relative
+ */
+/**
+ * @desc  三角形
+ * @param $width
+ * @param $height
+ * @param $color
+ * @param $direction: top bottom left right
+ */
+/**
+ * @desc 通过背景图实现三角形
+ */
+/**
+ * @param $direction: horizontal vertical both
+ */
+/**
+ * @param $min   min-width
+ * @param $max   max-width
+ */
+/**
+ * @param $filename
+ * @param $retina-filename   多个或者一个
+ * @param $ratio             多个或者一个
+ * @param $background-size
+ */
+/**
+ * @param $color
+ * @param $direction: top bottom left right vertical all radius,  default: all
+ */
+/**
+ * @param $color
+ * @param $direction: top bottom left right vertical all,  default: all
+ * @param $pseudo: after before, default: after
+ */
+/**
+ * @param $color
+ * @param $direction: top bottom left right vertical all radius,  default: all
+ * @param $pseudo: after before, default: after
+ * @param $radius default: 1px
+ */
+/**
+ * @desc  气泡提示: http://kazzkiq.github.io/balloon.css/
+ * @param $direction:            top bottom left right
+ * @param $bg                    气泡提示背景颜色
+ * @param $trangle-width         气泡小三角形宽度
+ * @param $trangle-height        气泡小三角形高度
+ * @param $color                 气泡文字颜色
+ * @param $font                  气泡文字大小
+ */
+/**
+ * @param $height  线高  default: 1px
+ * @param $space   线距离文字两边的距离 default: 0.5em
+ * @param $color   线颜色 default: inherit
+ * @param $style   border-style default: solid
+ * @param $adjust  线距离底部的距离，默认垂直居中 default: false
+ * @param $double  是否需要两条线
+ */
+p, section div {
+  background-color: blue; }
+
+section {
+  width: 400px;
+  position: relative;
+  border: 1px solid red; }
+  section div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+    position: relative; }
+    section div:before, section div:after {
+      content: "";
+      position: absolute; }
+    section div:before {
+      top: 0;
+      left: 0;
+      border-right: 9px solid yellow;
+      border-top: 9px solid transparent;
+      border-bottom: 9px solid transparent; }
+    section div:after {
+      border-right: 4px solid gray;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      top: 5px;
+      left: 5px; }
+    section div:before, section div:after {
+      position: absolute;
+      z-index: 10;
+      opacity: 0;
+      pointer-events: none;
+      transition: all .18s ease-out .18s;
+      top: 50%;
+      right: 100%;
+      transform: translate(10px, -50%); }
+    section div:before {
+      content: " ";
+      margin-right: 5px;
+      width: 18px;
+      height: 6px;
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20width%3D%2236px%22%20height%3D%2212px%22%3E%3Cpath%20fill%3D%22yellow%22%20transform%3D%22rotate(-90 6 6)%22%20d%3D%22M2.658,0.000%20C-13.615,0.000%2050.938,0.000%2034.662,0.000%20C28.662,0.000%2023.035,12.002%2018.660,12.002%20C14.285,12.002%208.594,0.000%202.658,0.000%20Z%22/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 100% auto; }
+    section div:after {
+      content: attr(data-balloon);
+      background: yellow;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 12px;
+      padding: .5em 1em;
+      white-space: nowrap;
+      margin-right: 11px; }
+    section div:hover:after, section div:hover:before {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(0, -50%); }
+    @media screen and (min-width: 320px) and (max-width: 480px) {
+      section div {
+        font-size: 16px; } }

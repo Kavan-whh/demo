@@ -1,0 +1,26 @@
+
+// 使用方法
+// @import "../../delete/temp.scss";
+
+.jstree-icon{
+  width: 14px;
+  height: 8px;
+  float: left;
+  cursor: pointer;
+}
+.jstree-no{
+  background: none;
+}
+.jstree-icon-sq{
+  transform: rotate(-90deg);
+}
+
+.div_bar{
+  display: none;
+}
+li:hover .div_bar{
+  display: block;
+}
+li{
+  position: relative;
+}

@@ -1,0 +1,6 @@
+@mixin float($direction: left, $support-ie: false) {
+    float: unquote($direction);//删除字符串中的引号
+    @if $support-ie {
+        _display: inline;
+    }
+}

@@ -1,0 +1,72 @@
+#mainnav-menu>.active {
+	box-shadow: inset 2px 0 0 0 #00C79C;
+}
+#mainnav-menu ul .active-link a, .menu-popover .sub-menu ul .active-link a {
+    font-weight: 600;
+    color: #fff;
+    box-shadow: inset 2px 0 0 0 #00C79C;
+}
+.page-header-title{
+	font-size: 14px;
+	position: relative;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.panel-body{
+	min-height: 440px;
+}
+.padd-top-no{
+	padding-top: 0;
+}
+.tab-box{
+	display: none;
+}
+.tab-box.onactive{
+	display: block;
+}
+.panel-heading{
+	position: relative;
+}
+.panel>.panel-heading:after, .panel.panel-colorful>.panel-heading:after{
+	border: none;
+}
+.panel-title{
+	text-align: center;
+	background: #fff;
+	font-size: 17px;
+    font-weight: 400;
+    color:#2B425B;
+    }
+.tit{
+	font-size: 12px;
+    border-bottom: 1px solid #e5e5e5;
+}
+a.link-new{
+	position: absolute;
+    right: 20px;
+    color: #fff;
+    padding: 6px 15px 6px 30px;
+    top: 10px;
+    bottom: 10px;
+    margin: auto;
+    // background: #00C79C url(./img/add.png) 10px center no-repeat;
+    background-size: auto 14px;
+    line-height: 18px;
+    font-size: 12px;
+}
+.back {
+    position: absolute;
+    left: 15px;
+    width: 50px;
+    cursor: pointer;
+    height: 24px;
+    // background: url(../img/back.png) left center no-repeat;
+    background-size: 24px auto;
+    top: 0px;
+    bottom: 0;
+    margin: auto;
+}

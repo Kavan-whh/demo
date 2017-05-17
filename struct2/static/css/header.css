@@ -1,0 +1,81 @@
+/*头部样式*/
+
+.navbar-brand {
+	height: 50px;
+}
+.brand-text {
+    display: block;
+    height: 50px;
+    background: url(../img/brand.png) center no-repeat;
+    background-size: auto 30px;
+}
+.navtab-flex{
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: start;
+    justify-content: start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.tab-nav {
+    width: 0;
+    flex: 1;
+    background: #fff;
+    margin-bottom:0;
+    padding-left: 0;
+    text-align: center;
+}
+.tab-nav li{
+	display: inline-block;
+}
+.tab-nav a{
+	line-height: 50px;
+	padding:0 20px;
+	height: 50px;
+	display: inline-block;
+	position: relative;
+	font-size: 14px;
+}
+.tab-nav .active a{
+	color: #00C79C;
+}
+.tab-nav .active a:after{
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left:12px;
+	right: 12px;
+	height: 2px;
+	background: #00C79C;
+}
+#content-container {
+    padding-top: 100px;
+}
+
+
+.navbar-top-links>li>a{
+	height: 50px;
+}
+
+@media (min-width: 768px){
+	.navbar-header:before {
+	    height: 50px;
+	}
+	#content-container {
+	    padding-top: 50px;
+	}
+	#navbar .brand-title {
+	    padding: 0 40px;
+	}
+}
+/*修改开关按钮颜色*/
+.toggle-switch:checked+label:before {
+    background-color: #00c79c;
+    transition: all .3s;
+}

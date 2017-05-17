@@ -1,0 +1,80 @@
+.top_content {
+  .label_comp>span{
+    position: relative;
+    display: inline-block;
+
+  }
+  .sex_w,.sex_m{
+    position: absolute;
+    width: 9px;
+    height: 12px;
+    top: 0px;
+    bottom: 2px;
+    margin: auto;
+    z-index: 3;
+    right: 12px;
+  }
+}
+
+.bottom_content {
+  border-top: none;
+  overflow-y: auto;
+  .row{
+    margin: 0;
+  }
+}
+
+.btn-wrap {
+  display: flex;
+  border-top: 1px solid #e5e5e5;
+
+  a {
+    display: inline-block;
+    flex: 1;
+    font-size: 12px;
+    color: #8F8F8F;
+    line-height: 36px;
+    text-align: center;
+    border: 1px solid #ccc;
+  }
+}
+
+.mod-pl {
+  ul {
+    padding: 17px;
+    box-sizing: border-box;
+
+    li {
+      position: relative;
+      width: 40px;
+      height: 62px;
+      float: left;
+      margin-right: 13px;
+      margin-bottom: 10px;
+      p{
+        margin-top: 5px;
+        margin-bottom: 0px;
+        text-align: center;
+        width: 105%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      img {
+        width: 40px;
+        height: 40px;
+      }
+      .mod-close-icon {
+        width: 10px;
+        height: 10px;
+        display: block;
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+
+
+}
