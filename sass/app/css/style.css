@@ -134,67 +134,11 @@
  * @param $adjust  线距离底部的距离，默认垂直居中 default: false
  * @param $double  是否需要两条线
  */
-p, section div {
-  background-color: blue; }
+#app li {
+  width: 200px;
+  border: 1px solid yellow; }
 
-section {
-  width: 400px;
-  position: relative;
-  border: 1px solid red; }
-  section div {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translate3d(-50%, 0, 0);
-    transform: translate3d(-50%, 0, 0);
-    position: relative; }
-    section div:before, section div:after {
-      content: "";
-      position: absolute; }
-    section div:before {
-      top: 0;
-      left: 0;
-      border-right: 9px solid yellow;
-      border-top: 9px solid transparent;
-      border-bottom: 9px solid transparent; }
-    section div:after {
-      border-right: 4px solid gray;
-      border-top: 4px solid transparent;
-      border-bottom: 4px solid transparent;
-      top: 5px;
-      left: 5px; }
-    section div:before, section div:after {
-      position: absolute;
-      z-index: 10;
-      opacity: 0;
-      pointer-events: none;
-      transition: all .18s ease-out .18s;
-      top: 50%;
-      right: 100%;
-      transform: translate(10px, -50%); }
-    section div:before {
-      content: " ";
-      margin-right: 5px;
-      width: 18px;
-      height: 6px;
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20width%3D%2236px%22%20height%3D%2212px%22%3E%3Cpath%20fill%3D%22yellow%22%20transform%3D%22rotate(-90 6 6)%22%20d%3D%22M2.658,0.000%20C-13.615,0.000%2050.938,0.000%2034.662,0.000%20C28.662,0.000%2023.035,12.002%2018.660,12.002%20C14.285,12.002%208.594,0.000%202.658,0.000%20Z%22/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-size: 100% auto; }
-    section div:after {
-      content: attr(data-balloon);
-      background: yellow;
-      border-radius: 4px;
-      color: #fff;
-      font-size: 12px;
-      padding: .5em 1em;
-      white-space: nowrap;
-      margin-right: 11px; }
-    section div:hover:after, section div:hover:before {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translate(0, -50%); }
-    @media screen and (min-width: 320px) and (max-width: 480px) {
-      section div {
-        font-size: 16px; } }
+#app .inner {
+  width: 100px;
+  height: 100px;
+  background-color: gray; }

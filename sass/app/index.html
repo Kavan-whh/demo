@@ -5,11 +5,17 @@
     <title></title>
     <!-- <link rel="stylesheet" href="./css/base.css"> -->
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/libs/vue/dist/vue.min.js" charset="utf-8"></script>
   </head>
   <body>
     <section id="app">
-      <div></div>
-      <div></div>
+      <ul>
+        <li v-for="item in arr">{{item}}
+          <div class="inner">
+            我是隐藏div
+          </div>
+        </li>
+      </ul>
     </section>
 
     <script src="./js/libs/jquery/dist/jquery.min.js" charset="utf-8"></script>

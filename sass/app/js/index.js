@@ -1,3 +1,7 @@
-$(document).ready(function() {
-  $('#app div').html('测试')
-});
+new Vue({
+  el:'#app',
+  data:{
+    arr:[1,2,3]
+  },
+
+})

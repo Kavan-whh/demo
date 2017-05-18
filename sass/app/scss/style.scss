@@ -1,28 +1,16 @@
 //**
 @import "../../src/mixins.scss";
-p{
-  background-color: blue;
-}
-section{
-  width: 400px;
-  // height: 100px;
-  position: relative;;
-  // background-color: red;
-  div{
-    width: 100px;
-    height: 100px;
-    @extend p;
-    @include arrow(9px,5px,left,yellow,gray);
-    @include center(horizontal);
-    @include balloon(left,yellow);
-    @include screen(320px,480px){
-      font-size: 16px;
-    };
-    // @include box-sizing;
-    // padding:10px;
-    // box-sizing: border-box;
-    // float: left;
-  }
-  border: 1px solid red;
-  // margin: 0 auto;
+@import "./temp.scss";
+
+#app {
+    li {
+        width: 200px;
+        @include _border(yellow);
+    }
+
+    .inner {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+    }
 }
