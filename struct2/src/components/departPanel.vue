@@ -26,7 +26,7 @@
                      <!-- 文件夹图标 -->
                      <span class="mod-icon mod-wj"></span>
                      <!-- 部门名称 -->
-                     <span  @click.native="bubble(item.id);">{{item.name}}</span>
+                     <span class="departName"  @click.native="bubble(item.id);">{{item.name}}</span>
                    </router-link>
 
                    <!-- 没任何权限的部门渲染 -->
@@ -48,7 +48,7 @@
                    <!-- 文件夹图标 -->
                    <span class="mod-icon mod-wj"></span>
                    <!-- 部门名称 -->
-                   <span  @click.native="bubble(item.id);">{{item.name}}</span>
+                   <span class="departName"   @click.native="bubble(item.id);">{{item.name}}</span>
                   </div>
              </section>
              <div class="div_bar" v-if="hasPermit || auth.manageable.indexOf(item.id)!=-1 ">

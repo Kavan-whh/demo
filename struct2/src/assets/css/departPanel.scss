@@ -1,68 +1,91 @@
-.div_bar{
+.div_bar {
   display: none;
-  .icon_send{
+
+  .icon_send {
     width: 13px;
-height: 13px;
-display: block;
-position: relative;
+    height: 13px;
+    display: block;
+    position: relative;
   }
 }
 
+.wrap {
+  height: 30px;
 
-li:hover .div_bar{
+  .departName {
+    display: inline-block;
+    width: 81%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+li:hover .div_bar {
   display: block;
 }
-li{
+li:hover .departName{
+  width: 61%;
+}
+
+li {
   position: relative;
   height: 30px;
   line-height: 30px;
-  div{
+
+  div {
     cursor: pointer;
     // border: 1px solid white;
-
-
   }
-  .wrap{
+
+  .wrap {
     position: relative;
     z-index: 8;
   }
-
 }
-.gray{
+
+.gray {
   // background-color: gray;
 }
+
 .notRoot:hover {
   background-color: #F2FCFB;
 }
-.outAllowids:hover{
+
+.outAllowids:hover {
   background-color: #e5e5e5;
 }
-.notRoot .router-link-active{
-   border: 1px solid #00c79c;
-   color: #00c79c;
-   z-index: 3;
+
+.notRoot .router-link-active {
+  border: 1px solid #00c79c;
+  color: #00c79c;
+  z-index: 3;
 }
-.wrap{
+
+.wrap {
   // padding-left: 12px;
 }
-.mod-icon{
+
+.mod-icon {
   width: 14px;
   height: 12px;
   display: inline-block;
   vertical-align: middle;
-  margin-top: -3px;
-}
-.root{
-    background: #00c79c;
-    color: #fff;
-    .jstree-icon{
-      margin-right: 9px;
-
-    }
+  margin-top: -25px;
 }
 
-#icon_add:hover:before{
-  content:'添加';
+.root {
+  background: #00c79c;
+  color: #fff;
+
+  .jstree-icon {
+    margin-top: -5px;
+    margin-right: 9px;
+  }
+}
+
+#icon_add:hover:before {
+  content: '添加';
   position: absolute;
   color: #00c79c;
   z-index: 5;
@@ -71,12 +94,13 @@ li{
   width: 25px;
   line-height: 17px;
   right: -34px;
-  top: 0px;
-  bottom: 0px;
+  top: 0;
+  bottom: 0;
   margin: auto;
   background: #fff;
 }
-.icon_send:hover:before{
+
+.icon_send:hover:before {
   position: absolute;
   color: #00c79c;
   z-index: 5;
@@ -85,13 +109,11 @@ li{
   width: 25px;
   line-height: 17px;
   right: -34px;
-  top: 0px;
-  bottom: 0px;
+  top: 0;
+  bottom: 0;
   margin: auto;
   background: #fff;
 }
-
-
 // .jstree-icon,.jstree-icon-sq{
 //   width: 14px;
 //   height: 8px;
@@ -101,12 +123,10 @@ li{
 // .jstree-no{
 //   background: none;
 // }
-
 // .jstree-clear{
 //   width: 0;
 //   height: 0;
 // }
-
 // .mod-icon{
 //   width: 15px;
 // height: 12px;
