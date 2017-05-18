@@ -135,10 +135,23 @@
  * @param $double  是否需要两条线
  */
 #app li {
-  width: 200px;
-  border: 1px solid yellow; }
+  width: 20px;
+  border: 1px solid black; }
 
 #app .inner {
   width: 100px;
   height: 100px;
-  background-color: gray; }
+  background-color: gray;
+  display: none; }
+
+#app input::-webkit-input-placeholder {
+  color: red;
+  padding-left: 10px; }
+
+#app input::-moz-placeholder {
+  color: red;
+  padding-left: 10px; }
+
+#app input:-ms-input-placeholder {
+  color: red;
+  padding-left: 10px; }

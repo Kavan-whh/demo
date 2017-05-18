@@ -1,7 +1,0 @@
-//
-@mixin text-overflow-hover($line:1) {
-  @if $line==1{
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-}
