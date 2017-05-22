@@ -1,0 +1,528 @@
+@charset "UTF-8";
+
+/* 初始化 begin */
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body,
+small,
+sup,
+sub,
+button,
+input,
+textarea,
+select {
+    font-size: 12px;
+    font-family: Arial, Helvetica, verdana, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+    font-size: normal;
+}
+
+sub,
+sup {
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -3px;
+}
+
+sub {
+    bottom: -3px;
+}
+
+button {
+    padding: 5px 10px;
+    overflow: visible;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+a,
+button,
+input,
+optgroup,
+select,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+    /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+}
+
+a,
+img {
+    -webkit-touch-callout: none;
+    /*禁止长按链接与图片弹出菜单*/
+}
+
+i,
+p,
+a {
+    word-break: break-all;
+    vertical-align: middle;
+}
+
+strong,
+em,
+b,
+i {
+    font-style: normal;
+    font-weight: normal;
+}
+
+input,
+select,
+textarea {
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-image: -webkit-linear-gradient(transparent, transparent);
+    background-image: linear-gradient(transparent, transparent);
+}
+
+html {
+    -webkit-text-size-adjust: none;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0 auto;
+    color: #575757;
+    max-width: 768px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    background: #fff;
+    -webkit-overflow-scrolling: touch;
+}
+
+.clearfix:before {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.yunTag section,
+.yunDepart section,
+.corpDepart section {
+    position: relative;
+    padding-left: 6px;
+    box-sizing: border-box;
+    line-height: 30px;
+    font-size: 12px;
+    color: #737F8F;
+}
+
+.corpDepart >section {
+    padding-left: 0px;
+}
+
+.corpDepart >section>li>section {
+    background: #2B91E6;
+    color: #fff;
+}
+
+
+/* checkbox 选择框 */
+
+.check_span {
+    width: 12px;
+    height: 12px;
+    background: url(../img/icon_noCheck.png) no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    display: block;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.check_span:nth-last-child(2) {
+    right: 10px;
+}
+
+.check_span:last-child {
+    right: 45px;
+}
+
+.check_span.checkedView {
+    background: url(../img/icon_check.png) no-repeat center center;
+    background-size: contain;
+}
+
+input[type="checkbox"] {
+    width: 12px;
+    height: 12px;
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+
+/*组织架构 图标 */
+
+.corpDepart .mod-icon {
+    width: 14px;
+    height: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -3px;
+    background: url(../img/icon_mod.png) no-repeat center center;
+    background-size: contain;
+}
+
+.corpDepart >section>li>section .mod-icon {
+    background: url(../img/icon_mod_w.png) no-repeat center center;
+    background-size: contain;
+}
+
+.yunDepart .mod-icon {
+    width: 14px;
+    height: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -3px;
+    background: url(../img/icon_file.png) no-repeat center center;
+    background-size: contain;
+}
+
+.yunTag .mod-icon {
+    width: 14px;
+    height: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -3px;
+    background: url(../img/icon_tag.png) no-repeat center center;
+    background-size: contain;
+}
+
+.jstree-icon {
+    width: 12px;
+    height: 7px;
+    cursor: pointer;
+}
+
+.jstree-icon-sq {
+    transform: rotate(-90deg);
+}
+
+.jstree-icon {
+    background: url('../img/三角1.png') no-repeat center center;
+    background-size: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: -3px;
+}
+
+.yunTag .jstree-icon {
+    margin-top: -4px;
+}
+
+.jstree-no {
+    background: none;
+    display: none;
+}
+
+
+/*    弹框  begin  */
+
+.modal-bg {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    display: none;
+    background: rgba(0, 0, 0, .5);
+}
+
+.modal-con {
+    position: fixed;
+    max-width: 660px;
+    width: 48%;
+    background: #fff url(../img/border.png);
+    background-size: 100% auto;
+    margin: 0 auto;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -moz-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.main-tan {
+    background: #fff;
+    position: relative;
+}
+
+.main-content {
+    background: #fff;
+    position: relative;
+    max-height: 280px;
+    display: none;
+}
+
+
+/* 弹框头部 */
+
+.main-content>p.p_title {
+    line-height: 44px;
+    width: 100%;
+    height: 44px;
+    text-align: center;
+    font-size: 12px;
+    color: #2B425B;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+
+.main-content>p.p_title>.modal_dele {
+    width: 13px;
+    height: 13px;
+    background: url(../img/icon_dele.png) no-repeat center center;
+    background-size: 100%;
+    position: absolute;
+    right: 12px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+}
+
+
+/* 弹框底部 */
+
+div.modal_footer {
+    height: 44px;
+    line-height: 44px;
+    background: #f9f9f9;
+    padding: 0 6px;
+    box-sizing: border-box;
+}
+
+div.modal_footer>div {
+    float: right;
+}
+
+div.modal_footer>div>div {
+    width: 72px;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+div.modal_footer>div>div>a {
+    line-height: 35px;
+    height: 35px;
+    text-align: center;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+}
+
+div.modal_footer>div>div:nth-child(1)>a {
+    background: #67ACF0;
+    color: #fff;
+    font-size: 14px;
+}
+
+div.modal_footer>div>div:nth-child(2)>a {
+    background: #D9DDE4;
+    font-size: 14px;
+    color: #737F8F;
+}
+
+.show {
+    display: block;
+}
+
+.modal_main {
+    max-height: 280px;
+    overflow: auto;
+    margin: 0px 10px 15px 20px;
+    border: 1px solid #e5e5e5;
+}
+
+
+/* 查看 管理 */
+
+.main-content>p.list_span {
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.main-content>p.list_span>span {
+    float: right;
+    font-size: 12px;
+    color: #737F8F;
+}
+
+.main-content>p.list_span>span:first-child {
+    margin-right: 10px;
+}
+
+.main-content>p.list_span>span:nth-child(2) {
+    margin-right: 15px;
+}
+
+
+/* 右侧滚动条 */
+
+.div_scroll {
+    width: 100%;
+    height: 225px;
+    overflow: auto;
+}
+
+.scroll_container {
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+}
+
+.scroll_absolute {
+    position: absolute;
+}
+
+.scroll_vertical_bar {
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: 12px;
+    height: 100%;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    margin: 0;
+    padding: 0;
+}
+
+.scroll_track {
+    position: relative;
+    background-color: #f7f7f7;
+}
+
+.scroll_drag {
+    position: relative;
+    top: 0;
+    left: 50%;
+    cursor: pointer;
+    width: 7px;
+    background: #8B98A7;
+    border-radius: 54px;
+    transform: translateX(-50%);
+}
+
+.scroll_arrow {
+    text-indent: -20000px;
+    display: block;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.scroll_vertical_bar .scroll_arrow {
+    height: 2px;
+}
+
+
+/*全选按钮*/
+
+.input-change-red,
+.input-all-pic {
+    width: 20px;
+    height: 20px;
+}
+
+
+/*蓝色为没有选中，红色全选选中*/
+
+.input-change-red {
+    background-color: red;
+}
+
+.input-all-pic {
+    background-color: blue;
+}

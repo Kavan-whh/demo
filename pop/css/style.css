@@ -1,0 +1,69 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.checkedView{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+}
+
+/*组织架构*/
+.jstree-icon{
+  width: 14px;
+  height: 8px;
+  float: left;
+  cursor: pointer;
+}
+
+.jstree-icon-sq{
+  transform: rotate(-90deg);
+}
+
+.jstree-icon{
+  background: url('../img/三角1.png') no-repeat center center;
+  background-size: 100%;
+}
+.jstree-no{
+  background: none;
+}
+
+.mod-icon{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-color: yellow;
+}
+
+
+/*全选按钮*/
+.input-change-red,.input-all-pic{
+  width: 20px;
+  height: 20px;
+}
+/*蓝色为没有选中，红色全选选中*/
+.input-change-red{
+  background-color: red;
+}
+.input-all-pic{
+  background-color: blue;
+}
+
+
+/*入口*/
+#enter .content{
+    width: 100px;
+    height:20px;
+    border: 1px solid black;
+}
+
+
+.corpDepart{
+  background-color: gray;
+}
+.red{
+  background-color: red;
+}
+.light{
+  background-color: yellow;
+}

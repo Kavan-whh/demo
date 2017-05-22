@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> 弹窗</title>
+    <!-- <link rel="stylesheet" href="./css/style1.css"> -->
+    <!-- <link href="./manage/OpenSans.css" rel="stylesheet" type="text/css">
+    <link href="./manage/bootstrap.min.css" rel="stylesheet">
+    <link href="./manage/nifty.min.css" rel="stylesheet">
+    <link href="./manage/nifty-demo-icons.min.css" rel="stylesheet">
+    <link href="./manage/nifty-demo.min.css" rel="stylesheet">
+    <link href="./manage/ionicons.min.css" rel="stylesheet">
+    <link href="./manage/font-awesome.min.css" rel="stylesheet">
+    <link href="./manage/morris.min.css" rel="stylesheet">
+    <link href="./manage/magic-check.min.css" rel="stylesheet">
+    <link href="./manage/pace.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../widgets/lightbox/css/lightbox.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link href="./css/header.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/style1.css" rel="stylesheet"> -->
+    <!-- 王灿 -->
+    <link rel="stylesheet" href="./css/all.css">
+    <script src="./js/vue.js"></script>
+    <script src="./js/vuex.js"></script>
+    <script src="./js/jquery.js"></script>
+</head>
+
+<body>
+    <section id="content">
+        <!--  入口-->
+        <div id="enter">
+            <div>
+                <div class="content"></div>
+                <button onclick="pop2()">云校组织架构</button>
+            </div>
+            <div>
+                <div class="content test"></div>
+                <button onclick="pop1()">企业号组织架构</button>
+            </div>
+            <div>
+                <div class="content"></div>
+                <button onclick="pop3()">云校标签</button>
+            </div>
+            <div>
+                <div class="content"></div>
+                <button onclick="pop4()">企业号标签</button>
+            </div>
+        </div>
+        <div id="pops">
+            <div class="modal-con">
+                <div class="main-tan">
+                    <div class="main-content show">
+                        <div class="p_title"></div>
+                        <p class="list_span clearfix"><span>管理</span><span>查看</span></p>
+                        <div class="modal_main">
+                            <div class="div_scroll">
+                                <div class="my-vue"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal_footer clearfix">
+                        <div>
+                        </div>
+                    </div>
+                </div>
+                <span class="icon-dele"></span>
+            </div>
+        </div>
+    </section>
+    <script type="text/x-template" id="qyh-tag-template">
+        <section>
+            <ul>
+                <li v-for="(item,index) in qyhTagData">
+                    <!--  文字前图标-->
+                    {{item.tagname}}
+                    <span :class="{checkedView: readable.indexOf(item.tagid)!=-1}"><input  type="checkbox" @click="read(item.tagid)"></span>
+                    <span :class="{checkedView: manageable.indexOf(item.tagid)!=-1}"><input type="checkbox" @click="manage(item.tagid)"></span>
+                </li>
+            </ul>
+        </section>
+    </script>
+    <!-- 企业号通讯录组织架构 -->
+    <script type="text/x-template" id="my-digui-template">
+        <ul :class="cls">
+            <section v-for="(item,key) in lists">
+                <!-- 渲染根 -->
+                <li v-if="item.id==root">
+                    <section class="">
+                        <!-- 文件夹图标 -->
+                        <span class="mod-icon"></span>
+                        <!-- 部门名称 -->
+                        <span @click="bubble(item.id);">{{item.name}}</span>
+                        <!--  有全选的版本-->
+                        <!-- <span :class="ckallS ? 'input-change-red' : 'input-all-pic'"><input  type="checkbox" @click="readCheckAll($event)"></span> -->
+                        <!-- <span :class="ckallM ? 'input-change-red' : 'input-all-pic'"><input type="checkbox" @click="manageCheckAll($event)"></span> -->
+                        <span :class="{checkedView: readable.indexOf(item.id)!=-1}" class="check_span"><input  type="checkbox" @click="read(item.id)"></span>
+                        <span :class="{checkedView: manageable.indexOf(item.id)!=-1}" class="check_span"><input type="checkbox" @click="manage(item.id)"></span>
+                    </section>
+                </li>
+                <li v-if="item.id!=root" :class="{light:curr==item.id}" @click="bubble(item.id);">
+                    <section class="" :style="{paddingLeft: 10 * level +6*(level-2)+ 'px'}">
+                        <i class="jstree-icon" :class="iconCls[expand[item.id]]" @click="chageClass(item)"></i>
+                        <!-- 文件夹图标 -->
+                        <span class="mod-icon"></span>
+                        <!-- 部门名称 -->
+                        <span >{{item.name}}</span>
+                        <span :class="{checkedView: readable.indexOf(item.id)!=-1}" class="check_span"><input  type="checkbox" @click="read(item.id)"></span>
+                        <span :class="{checkedView: manageable.indexOf(item.id)!=-1}" class="check_span"><input type="checkbox" @click="manage(item.id)"></span>
+                    </section>
+                </li>
+                <my-digui v-on:ckdepart="bubble" :curr=curr v-show="expand[item.id] == 2" v-if="item.children" :lists="item.children" :level="level+1"></my-digui>
+            </section>
+        </ul>
+    </script>
+</body>
+<script src="./manage/pace.min.js"></script>
+  <script src="./manage/jquery-2.2.4.min.js"></script>
+  <script src="./manage/bootstrap.min.js"></script>
+  <script src="./manage/nifty.min.js"></script>
+  <!-- <script src="./manage/vue.js"></script> -->
+
+
+
+  <!--  王灿-->
+<script src="./js/index.js" charset="utf-8"></script>
+<script src="./js/api.js" charset="utf-8"></script>
+<script src="./js/user.js" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8" src="script/mousewheel/mousewheel.js"></script>
+<script type="text/javascript" charset="utf-8" src="script/easyscroll.js"></script>
+<!-- arrows: true -->
+<script type="text/javascript">
+$('#enter button').click(function() {
+    $('.div_scroll').scroll_absolute({
+        arrows: true
+    })
+    if ($('.scroll_vertical_bar').length == 0) {
+        $('.main-content>p.list_span').css('padding-right', '3px');
+    } else {
+        $('.main-content>p.list_span').css('padding-right', '20px');
+    }
+})
+$('body').on('click', '.jstree-icon', function() {
+    $('.div_scroll').scroll_absolute({
+        arrows: true
+    })
+    if ($('.scroll_vertical_bar').length == 0) {
+        $('.main-content>p.list_span').css('padding-right', '3px');
+    } else {
+        $('.main-content>p.list_span').css('padding-right', '20px');
+    }
+})
+if ($('.scroll_vertical_bar').length == 0) {
+    $('.main-content>p.list_span').css('padding-right', '3px');
+}
+</script>
+
+</html>
