@@ -14,5 +14,5 @@ var svg = d3.select('body')
 	.attr('height', 300)
 	.attr('width', 300)
 	.append("g");
-    
+
 axis(svg);
