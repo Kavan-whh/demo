@@ -5,8 +5,12 @@ import App from './App'
 import router from './router'
 
 Vue.config.productionTip = false
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
 
-// import 
+Vue.use(ElementUI)
+
+// import
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
