@@ -18,7 +18,27 @@ export default {
       .data([4, 8, 15, 16, 23, 42])
       .enter()
       .append("div")
-      .style("height", (d)=> d + "px")
+      .style("height", (d)=> d*5 + "px")
+      .style('width',(d)=>d*10+'px')
+      .style('background','yellow')
+
+      .transition().duration(1000)
+      // // Styles after entering
+    	.style('height', '30px')
+      .style('opacity', .2)
+      .style('transform', 'none')
+      .call(this.drag1)
+  },
+  methods:{
+    drag1(){
+      console.log(d3);
+      d3.drag()
+      .on('drag',function(){
+        d3.select(this)
+        .attr("x", d3.event.x)
+        .attr("y", d3.event.y)
+      })
+    }
   }
 }
 </script>
