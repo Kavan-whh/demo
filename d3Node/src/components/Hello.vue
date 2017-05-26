@@ -39,7 +39,8 @@ export default {
       .on("drag", function(d, i) {
         d3.select(this)
           .attr("x", d3.event.x)
-          .attr("y", d3.event.y);
+          .attr("y", d3.event.y)
+
       });
     var drag3 = d3.drag()
       .on("drag", function(d, i) {
