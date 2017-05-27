@@ -1,11 +1,12 @@
 <template lang="html">
-    <circle id="circles" cx="100" cy="50" r="40" stroke="black"
+    <circle :id="randomid" :cx="cx" :cy="cy" :r="r" stroke="black"
     stroke-width="2" fill="red"/>
 
 </template>
 
 <script>
 export default {
+  props:['cx','cy','r','randomid']
 }
 </script>
 

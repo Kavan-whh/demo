@@ -4,14 +4,7 @@
     <!--  工具箱-->
     <el-col :span="4">
       <p>工具箱</p>
-      <section>
-        <svg width="100%" height="100%">
-
-
-
-        </svg>
-
-      </section>
+      <my-tools></my-tools>
     </el-col>
 
     <!-- 画布展示区 -->
@@ -31,9 +24,12 @@
 </template>
 
 <script>
-
+import myTools from '@/components/tools'
 export default {
   name: 'app',
+  components: {
+    myTools
+  }
 
 }
 </script>
@@ -47,5 +43,4 @@ export default {
     color: #2c3e50;
     margin-top: 60px;
 }
-
 </style>
