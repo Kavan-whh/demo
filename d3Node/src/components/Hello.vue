@@ -53,22 +53,21 @@ export default {
 
 
 
-    var drag1 = d3.drag()
+    var drag1 = d3.drag()//多边形拖拽
       .on("drag", function(d, i) {
         d3.select(this).attr("transform", function(d, i) {
-          return "translate(" + [d3.event.x, d3.event.y] + ")"
+          return "translate(" + [d3.event.x-200, d3.event.y-100] + ")"
         })
       });
 
-    var drag2 = d3.drag()
-      // .origin(function(d) {return {x : d[0],y : d[1]};})
+    var drag2 = d3.drag()//矩形拖拽
       .on("drag", function(d, i) {
         d3.select(this)
-          .attr("x", d3.event.x)
-          .attr("y", d3.event.y)
+          .attr("x", d3.event.x-25)//定到拖拽中间
+          .attr("y", d3.event.y-25)
 
-      });
-    var drag3 = d3.drag()
+      })
+    var drag3 = d3.drag()//圆形拖拽
       .on("drag", function(d, i) {
         d3.select(this)
           .attr("cx", d3.event.x)
