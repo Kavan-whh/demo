@@ -20,7 +20,7 @@ export default {
     var circles = d3.select('#circles') //圆形
     var polygons = d3.select('#polygons') //三角
 
-
+// 坐标比例尺
     var dataset = [1, 2, 3,1000];
     var yScale = d3.scaleBand() //序数比例尺
       .domain(d3.range(dataset.length)) //    设置序数比例尺的值域
@@ -30,10 +30,24 @@ export default {
       .domain([0, d3.max(dataset)]) //设置线性比例尺的值域
       .range([0, 950]); //设置线性比例尺的输出范围
 
-      var axis=d3.axisTop(xScale)
-      axis(chart)
+      var xAxis=d3.axisTop(xScale)
+      var yAxis=d3.axisLeft(yScale)
+      // xAxis(chart)
+      // yAxis(chart)
+      chart.append("g")
+      .attr("transform","translate(30,20)")
+      .call(xAxis)
+
+      chart.append("g")
+      .attr("transform","translate(30,50)")
+      .call(yAxis)
+
+// 文本块
       chart.selectAll('text')
-      .attr('dy','2em')
+      .attr("y", 0)//文本坐标
+      .attr("x", 8)
+      .attr("dy", "2em")//移动的坐标
+
 
 
 
