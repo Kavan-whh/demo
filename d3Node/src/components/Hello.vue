@@ -1,5 +1,5 @@
 <template>
-    <svg id="chart" width="950" height="500">
+<svg id="chart" width="950" height="500">
       <rect id="rects" x="50" y="20" width="50" height="50"
     style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;
     stroke-opacity:0.9"/>
@@ -14,17 +14,29 @@
 var d3 = require("d3");
 
 export default {
-  name: 'hello',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  },
   mounted() {
-    var chart=d3.select('#chart')
-    var rects = d3.select('#rects')
-    var circles = d3.select('#circles')
-    var polygons = d3.select('#polygons')
+    var chart = d3.select('#chart') //画布
+    var rects = d3.select('#rects') //矩形
+    var circles = d3.select('#circles') //圆形
+    var polygons = d3.select('#polygons') //三角
+
+
+    var dataset = [1, 2, 3,1000];
+    var yScale = d3.scaleBand() //序数比例尺
+      .domain(d3.range(dataset.length)) //    设置序数比例尺的值域
+      .range([0, 1000]); //根据输入值域的长度将自动将其分为相等的块，并且设定间距
+
+    var xScale = d3.scaleLinear() //线性比例尺
+      .domain([0, d3.max(dataset)]) //设置线性比例尺的值域
+      .range([0, 950]); //设置线性比例尺的输出范围
+
+      var axis=d3.axisTop(xScale)
+      axis(chart)
+      chart.selectAll('text')
+      .attr('dy','2em')
+
+
+
 
 
     var drag1 = d3.drag()
@@ -35,7 +47,7 @@ export default {
       });
 
     var drag2 = d3.drag()
-    // .origin(function(d) {return {x : d[0],y : d[1]};})
+      // .origin(function(d) {return {x : d[0],y : d[1]};})
       .on("drag", function(d, i) {
         d3.select(this)
           .attr("x", d3.event.x)
@@ -84,5 +96,4 @@ export default {
 #chart {
     background-color: #00bcd4;
 }
-
 </style>
