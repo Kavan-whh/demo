@@ -68,6 +68,10 @@ export default {
 
       })
     var drag3 = d3.drag() //圆形拖拽
+      .on("start",function(){
+          d3.select(this)
+          .style('fill','red')
+      })
       .on("drag", function(d, i) {
         d3.select(this)
           .attr("cx", d3.event.x)
