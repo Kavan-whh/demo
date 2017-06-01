@@ -8,8 +8,9 @@
     </el-col>
 
     <!-- 画布展示区 -->
-    <el-col :span="16">
-      <p>画布</p>
+    <el-col :span="16" >
+      <!-- <router-link to="/" tag="p" class="routerSec">画布</router-link> -->
+      <!-- <router-link to="/temp" tag="p" class="routerSec">Temp</router-link> -->
       <router-view></router-view>
     </el-col>
 
@@ -42,5 +43,10 @@ export default {
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+}
+.routerSec{
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 20px;
 }
 </style>
