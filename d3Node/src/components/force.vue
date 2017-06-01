@@ -1,7 +1,10 @@
 <template lang="html">
-  <svg id="svg" width="100%" height="500px">
+  <section>
+    <svg id="svg" width="100%" height="500px">
+      <line x="100" y="10" x1="20" y1="20"></line>
+    </svg>
+  </section>
 
-  </svg>
 </template>
 
 <script>

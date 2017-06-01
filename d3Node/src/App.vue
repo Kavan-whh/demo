@@ -9,8 +9,8 @@
 
     <!-- 画布展示区 -->
     <el-col :span="16" >
-      <!-- <router-link to="/" tag="p" class="routerSec">画布</router-link> -->
-      <!-- <router-link to="/temp" tag="p" class="routerSec">Temp</router-link> -->
+      <router-link to="/" tag="p" class="routerSec">画布</router-link>
+      <router-link to="/temp" tag="p" class="routerSec">Temp</router-link>
       <router-view></router-view>
     </el-col>
 

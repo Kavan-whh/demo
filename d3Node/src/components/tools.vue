@@ -4,7 +4,6 @@
       <my-circles cx="20%" cy="28%" r="15%"></my-circles>
       <my-rects x="55%" y="13%" width="25%" height="50px"></my-rects>
 
-
     </svg>
 
   </section>
