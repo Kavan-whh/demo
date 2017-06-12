@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="http://uctest.gzapp.hxtdt.com/wechat/backend/corp/uctest.gzapp.hxtdt.comfavicon.ico" type="image/x-icon">
+    <title>应用管理</title>
+    <link href="./manage/OpenSans.css" rel="stylesheet" type="text/css">
+    <link href="./manage/bootstrap.min.css" rel="stylesheet">
+    <link href="./manage/nifty.min.css" rel="stylesheet">
+    <!-- <link href="./manage/nifty-demo-icons.min.css" rel="stylesheet"> -->
+    <link href="./manage/nifty-demo.min.css" rel="stylesheet">
+    <link href="./manage/ionicons.min.css" rel="stylesheet">
+    <link href="./manage/font-awesome.min.css" rel="stylesheet">
+    <link href="./manage/morris.min.css" rel="stylesheet">
+    <link href="./manage/magic-check.min.css" rel="stylesheet">
+    <link href="./manage/pace.min.css" rel="stylesheet">
+    <link href="./css/header.css" rel="stylesheet">
+    <!--  王灿引入-->
+    <link rel="stylesheet" href="./css/base.css">
+    <link href="./css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- 发布弹窗 -->
+    <script type="text/x-template" id="lis—template">
+        <ul class="clear">
+            <li class="lis" v-for="item in lis" :class="
+            {'checked': checkedArr.indexOf(item.id)!= -1,
+            'dark': ((inputData.ctrl==='weixin') && item.total==0)||item.isDue && (inputData.ctrl!='weixin') }">
+
+                <img v-if="item.isDue && (inputData.ctrl!='weixin')" class="auth" src="./img/授权期限.png" alt="">
+                <div class="input__wrap" @click.stop="checkedOne(item)">
+                    <input type="checkbox">
+                </div>
+                <img :src="item.img" alt="">
+                <!-- 微信 -->
+                <section v-if="inputData.ctrl==='weixin'">
+                    <h4>{{item.title}}</h4>
+                    <p>服务号 本月还可群发 <span>{{item.total}}</span>条信息 </p>
+                </section>
+                <!--  -->
+                <section class="pop__else" v-else>
+                    <h4>{{item.title}}</h4>
+                </section>
+
+                </li>
+        </ul>
+    </script>
+    <!-- 选择素材 -->
+    <script type="text/x-template" id="material—template">
+        <section>
+            <div class="search_input">
+                <span></span>
+                <input placeholder="请输入搜素的标签" v-model="searchtext" @input="search">
+            </div>
+            <ul>
+                <li class="lis" v-if="this.searchtext===''" v-for="item in materialData" :class="
+              {'checked': checkedArr.indexOf(item.id)!= -1}">
+                    <div class="input__wrap" @click.stop="checkedOne(item)">
+                        <input type="checkbox">
+                    </div>
+                    <img :src="item.img" alt="">
+
+                    <section class="pop__else">
+                        <h4>{{item.title}}</h4>
+                    </section>
+
+                    </li>
+
+                    <li class="lis" v-if="this.searchtext!==''" v-for="item in searchResult" :class="
+              {'checked': checkedArr.indexOf(item.id)!= -1}">
+                        <div class="input__wrap" @click.stop="checkedOne(item)">
+                            <input type="checkbox">
+                        </div>
+                        <img :src="item.img" alt="">
+
+                        <section class="pop__else">
+                            <h4>{{item.title}}</h4>
+                        </section>
+
+                        </li>
+            </ul>
+
+        </section>
+
+
+
+    </script>
+
+    <!--  弹窗头部-->
+    <script type="text/x-template" id="popHd—template">
+        <section :style="style">
+            {{title}}<span class="icon_labeldele" @click="close"></span>
+        </section>
+    </script>
+
+
+    <!-- 发布结果 -->
+    <script type="text/x-template" id="publish—template">
+      <section>
+        <ul>
+          <!-- 微信 -->
+          <li v-if="publishCtrl=='weixin'" v-for="item in weixin">
+            <span class="members" v-for="i in item.members">{{i}}</span>
+            <span class="font__red">{{item.detail}}</span>
+          </li>
+          <!-- 素材错误 -->
+          <li class="material" v-if="publishCtrl=='material'" v-for="item in material">
+            <span class="title">{{item.members}}</span>
+            <img :src="item.img" alt="">
+            <span class="font__red">{{item.detail}}</span>
+          </li>
+        </ul>
+      </section>
+    </script>
+
+    <div id="pops">
+      <!--  用来测试看效果的div-->
+        <!-- <div class="outputData"></div> -->
+        <div class="bg"></div>
+        <section class="pops">
+            <pop-hd v-if="ctrl!=='material'" class="pop__hd" :title="'选择'+title+'发布平台'"> </pop-hd>
+            <pop-hd v-else class="pop__hd" :title="title"> </pop-hd>
+
+            <pop-bd v-if="ctrl!=='material'" class="pop__bd"></pop-bd>
+                <one-material v-else class="pop__bd pop__material"></one-material>
+
+                <section class="pop__ft">
+                    <div class="pop__btn_wrap clear">
+                        <div class="left" @click="save">保存</div>
+                        <div class="right" @click="close">取消</div>
+                    </div>
+
+                </section>
+        </section>
+<!-- 发布结果 -->
+        <section class="pops pop__publish">
+          <pop-hd  class="pop__hd"  title="发布结果"> </pop-hd>
+          <pop-publish class="pop__bd"></pop-publish>
+
+
+          <section class="pop__ft">
+              <div class="pop__btn_wrap clear">
+                  <div class="left" @click="close">知道了</div>
+              </div>
+
+          </section>
+      </section>
+
+
+
+    </div>
+
+
+    <script>
+        var YII_DEBUG = true;
+    </script>
+
+    <script src="./manage/pace.min.js"></script>
+    <script src="./manage/jquery-2.2.4.min.js"></script>
+    <script src="./manage/bootstrap.min.js"></script>
+    <script src="./manage/nifty.min.js"></script>
+    <script src="./manage/jquery.sparkline.min.js"></script>
+    <script src="http://eai.datamorality.com/thirdparty/nifty/js/jquery-2.2.4.min.js"></script>
+    <script src="http://eai.datamorality.com/thirdparty/vuejs/v1.0.26/vue.min.js"></script>
+    <script src="./manage/bootbox.min.js"></script>
+    <!--script src="/thirdparty/nifty/js/demo/nifty-demo.min.js"></script-->
+    <!--script src="/thirdparty/nifty/plugins/morris-js/morris.min.js"></script-->
+    <!--script src="/thirdparty/nifty/plugins/morris-js/raphael-js/raphael.min.js"></script-->
+    <!--script src="/thirdparty/nifty/js/demo/dashboard.js"></script-->
+    <script src="./js/vuex.js" charset="utf-8"></script>
+    <script src="./js/index.js" charset="utf-8"></script>
+    <script src="./js/user.js" charset="utf-8"></script>
+
+    <script>
+        $(".tab-nav li").on("click", function() {
+            $(".tab-nav li").removeClass("active");
+            $(".tab-box").removeClass("onactive");
+            $(".tab-box").eq($(this).index()).addClass("onactive");
+            $(this).addClass("active");
+        });
+    </script>
+</body>
+
+</html>

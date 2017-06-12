@@ -1,0 +1,296 @@
+$border_gray: #e5e5e5;
+$popBdHeight:300px;
+$font_green: #00C79C;
+$box__width: 800px;
+$show__pop__publish:block;
+$show__pops:none;
+@mixin borderGray {
+    border: 1px solid $border_gray;
+}
+
+.bg{
+  position: fixed;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+z-index: 999;
+background: rgba(0,0,0,.5);
+}
+.pops {
+    display: $show__pops;
+    position: fixed;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    border-top: 5px solid $font_green;
+    width: $box__width;
+    background-color: #fff;
+
+    .pop__hd {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        color: #2B425B;
+        border-bottom: 1px solid #e5e5e5;
+        position: relative;
+
+        .icon_labeldele {
+            width: 13px;
+            height: 13px;
+            position: absolute;
+            right: 12px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            cursor: pointer;
+            background: url("../img/close.png") no-repeat center center;
+            background-size: 100%;
+        }
+
+        .close {}
+    }
+    .pop__bd {
+        padding: 10px;
+        min-height: 200px;
+        max-height: $popBdHeight;
+        overflow: auto;
+
+        .dark{
+          background-color:rgba(0,0,0,0.23);
+        }
+
+        .lis {
+            padding: 6px;
+            width: 32%;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            float: left;
+            position: relative;
+            border: 1px solid $border_gray;
+
+            .input__wrap,
+            img,
+            section {
+                display: block;
+                float: left;
+            }
+            .auth{
+              position: absolute;
+              left: 0;
+              top:0;
+              width: 14%;
+            height: 51%;
+            }
+
+            .input__wrap {
+                width: 15px;
+                height: 15px;
+                margin: 21px 5px;
+                @include borderGray;
+
+                input {
+                    outline: none;
+                    opacity: 0;
+                    border: none;
+                }
+            }
+
+            img {
+                width: 50px;
+                height: 50px;
+                margin-right: 7px;
+            }
+
+            section {
+                width: 65%;
+
+                h4 {
+                    margin: 0 0 5px;
+                    font-size: 14px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 10px;
+                }
+
+                p span {
+                    color: $font_green;
+                }
+            }
+            .pop__else{
+              h4{
+                text-overflow: ellipsis;
+                white-space: wrap;
+                overflow: hidden;
+
+              }
+
+            }
+        }
+
+        .checked {
+            .input__wrap {
+                background: url('../img/勾选.png');
+                background-size: 100%;
+            }
+            border:2px solid $font_green;
+            padding: 5px;
+        }
+    }
+
+    .pop__material{
+      .search_input {
+        width: 32%;
+        margin-bottom: 10px;
+        span {
+            margin: 8px;
+            float: left;
+            width: 14px;
+            height: 14px;
+            display: block;
+            position: absolute;
+            background: url('../img/搜索.png') no-repeat;
+            background-size: 100%;
+        }
+        input {
+            font-size: 13px;
+            width: 100%;
+            padding: 5px 0 5px 30px;
+            box-sizing: border-box;
+            display: block;
+            outline: none;
+
+        }
+      }
+      ul{
+        .lis{
+          width: 48%;
+        }
+      }
+    }
+    .pop__ft {
+        border-top: 1px solid $border_gray;
+
+        .pop__btn_wrap {
+            padding: 10px;
+            width: 46%;
+            margin: 0 auto;
+            color: #fff;
+
+            div {
+                cursor: pointer;
+                width: 30%;
+                text-align: center;
+                padding: 5px;
+                font-size: 14px;
+            }
+
+            .left {
+                background-color: $font_green;
+            }
+
+            .right {
+                background-color: #CACBCC;
+            }
+        }
+    }
+}
+.pop__publish {
+  display: $show__pop__publish;
+  position: fixed;
+  border-top: 0;
+    width: 600px;
+    background-color: #fff;
+
+    .pop__hd {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        color: #2B425B;
+        border-bottom: 1px solid #e5e5e5;
+        position: relative;
+
+        .icon_labeldele {
+            width: 13px;
+            height: 13px;
+            position: absolute;
+            right: 12px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            cursor: pointer;
+            background: url("../img/close.png") no-repeat center center;
+            background-size: 100%;
+        }
+
+    }
+    .pop__bd {
+        padding:10px  20px ;
+        height: 200px;
+        overflow: auto;
+        li{
+          @include borderGray;
+          padding: 3px;
+          font-size: 12px;
+          margin-bottom: 10px;
+          .members,.font__red{
+            display: inline-block;
+          }
+          .font__red{
+              width: initial;
+          }
+        }
+        .material{
+          height: 90px;
+          span{display: block;}
+          .title{
+            font-size: 14px;
+          }
+
+          img{
+            display: block;
+            width: 10.8%;
+            margin: 5px;
+            height: 45%;
+          }
+          .font__red{
+            padding-left: 5px;
+          }
+        }
+
+
+
+    }
+
+    .pop__ft {
+        border-top: 1px solid $border_gray;
+
+        .pop__btn_wrap {
+            padding: 10px;
+            width: 24%;
+            margin: 0 auto;
+            color: #fff;
+
+            div {
+                cursor: pointer;
+                width: 100%;
+                text-align: center;
+                padding: 5px;
+                font-size: 14px;
+            }
+
+            .left {
+                background-color: $font_green;
+            }
+
+
+        }
+
+    }
+}
