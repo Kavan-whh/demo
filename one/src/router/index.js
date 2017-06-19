@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-
+import Tools from 'components/tools'
+// import Details from 'components/details'
+// import Show from 'components/show'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      component: Tools
     }
   ]
 })
