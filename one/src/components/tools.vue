@@ -1,5 +1,5 @@
 <template>
-<section @dragend="createElement">
+<section @dragend="createElement()">
   <p>工具</p>
   <ul>
     <li class="element">我是图片</li>
