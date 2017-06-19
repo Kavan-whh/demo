@@ -9,7 +9,7 @@
   background: rgba(0, 0, 0, 0.5); }
 
 .pops {
-  display: none;
+  display: block;
   position: fixed;
   left: 50%;
   top: 50%;
@@ -138,7 +138,7 @@
         background-color: #CACBCC; }
 
 .pop__publish {
-  display: block;
+  display: none;
   position: fixed;
   border-top: 0;
   width: 600px;

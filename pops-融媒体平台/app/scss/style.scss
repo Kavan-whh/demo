@@ -2,8 +2,8 @@ $border_gray: #e5e5e5;
 $popBdHeight:300px;
 $font_green: #00C79C;
 $box__width: 800px;
-$show__pop__publish:block;
-$show__pops:none;
+$show__pop__publish:none;
+$show__pops:block;
 @mixin borderGray {
     border: 1px solid $border_gray;
 }

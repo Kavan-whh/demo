@@ -1,19 +1,18 @@
-
 // ============================数据=============================
-var STATIC_PATH = "../";//图片资源
-var materialData=[{ //图文素材数据
+var STATIC_PATH = "../"; //图片资源
+var materialData = [{ //图文素材数据
     id: 1,
     img: STATIC_PATH + 'img/01.png',
     title: '华中师范大学-外联部外联部外联部',
-    inner:'新闻1新闻1新闻1新闻1新闻1新闻1新闻1'
+    inner: '新闻1新闻1新闻1新闻1新闻1新闻1新闻1'
 }, {
     id: 2,
     img: STATIC_PATH + 'img/01.png',
     title: '华中师范大学-外联部外联部外联部',
-    inner:'新闻2新闻2新闻2新闻2新闻2'
+    inner: '新闻2新闻2新闻2新闻2新闻2'
 }];
 
-var lis=[{ //平台数据
+var lis = [{ //平台数据
     id: 1,
     isDue: 1, //到期
     img: STATIC_PATH + 'img/01.png',
@@ -39,25 +38,25 @@ var lis=[{ //平台数据
     total: '20'
 }];
 
-var resPublish={//发布结果数据
-  weixin:[{
-      members: ['中国农业大学教务处'],
-      detail: '以上微信号授权期限已到期',
-      img: STATIC_PATH + 'img/01.png',
-  }, {
-      members: ['中国农业大学教务处'],
-      detail: '以上微信号授权期限已到期',
-      img: STATIC_PATH + 'img/01.png',
-  }],
-  material: [{
-      members: ['中国农业大学教务处'],
-      detail: '此条素材存在问题，未发送成功，请重新编辑',
-      img: STATIC_PATH + 'img/01.png',
-  }, {
-      members: ['中国农业大学教务处'],
-      detail: '此条素材存在问题，未发送成功，请重新编辑',
-      img: STATIC_PATH + 'img/01.png',
-  }]
+var resPublish = { //发布结果数据
+    weixin: [{
+        members: ['中国农业大学教务处'],
+        detail: '以上微信号授权期限已到期',
+        img: STATIC_PATH + 'img/01.png',
+    }, {
+        members: ['中国农业大学教务处'],
+        detail: '以上微信号授权期限已到期',
+        img: STATIC_PATH + 'img/01.png',
+    }],
+    material: [{
+        members: ['中国农业大学教务处'],
+        detail: '此条素材存在问题，未发送成功，请重新编辑',
+        img: STATIC_PATH + 'img/01.png',
+    }, {
+        members: ['中国农业大学教务处'],
+        detail: '此条素材存在问题，未发送成功，请重新编辑',
+        img: STATIC_PATH + 'img/01.png',
+    }]
 }
 
 // ============================组件=============================
@@ -147,7 +146,7 @@ Vue.component('one-material', {
                 clearTimeout(this.timeout);
             }
             var self = this;
-            this.timeout = setTimeout(function() {
+            this.timeout = setTimeout(function () {
                 // $.ajax({
                 //   url: '/path/to/file',
                 //   type: 'default GET (Other values: POST)',
@@ -213,11 +212,11 @@ Vue.component('pop-publish', {
         }
     },
     computed: {
-        publishCtrl: function() {
+        publishCtrl: function () {
             return this.$store.state.inputData.publishCtrl
         },
-        STATIC_PATH: function() {
-          console.log(this.$store.state.inputData.ctrl);
+        STATIC_PATH: function () {
+            console.log(this.$store.state.inputData.ctrl);
             return this.$store.state.inputData.STATIC_PATH
         }
 
@@ -235,10 +234,11 @@ var storeOpt = {
         inputData: { //调用插件者初始化数据
             ctrl: 'weixin', //'toutiao,weibo,weixin'，'material',
             publishCtrl: 'weixin', //weixin,material
+            showSurplus: true
         },
         checkedArr: [], //选中的数组
-        materialData:materialData,
-        lis:lis,
+        materialData: materialData,
+        lis: lis,
 
     },
     mutations: {
@@ -252,75 +252,151 @@ var storeOpt = {
 }
 const store = new Vuex.Store(storeOpt)
 
-function createPop(userOpt) {
-    if (typeof userOpt.STATIC_PATH != 'undefined') {
-        STATIC_PATH = userOpt.STATIC_PATH
+// function createPop(userOpt) {
+//     if (typeof userOpt.STATIC_PATH != 'undefined') {
+//         STATIC_PATH = userOpt.STATIC_PATH
 
-    }
-    // Object.assign(storeOpt.state.inputData, userOpt.storeOpt.inputData)
-    var vueOpt = {
-        el: '#pops',
-        store,
-        computed: {
-            checkedArr() {
-                return this.$store.state.checkedArr
-            },
-            ctrl() {
-                return this.$store.state.inputData.ctrl
-            },
-            title() {
-                switch (this.ctrl) {
-                    case 'weixin':
-                        return '微信'
-                        break;
-                    case 'weibo':
-                        return '微博'
-                        break;
-                    case 'toutiao':
-                        return '头条'
-                        break;
-                    case 'material':
-                        return '选择图文素材'
-                        break;
-                    default:
-                        break;
+//     }
+//     // Object.assign(storeOpt.state.inputData, userOpt.storeOpt.inputData)
+//     var vueOpt = {
+//         el: '#pops',
+//         store,
+//         computed: {
+//             checkedArr() {
+//                 return this.$store.state.checkedArr
+//             },
+//             ctrl() {
+//                 return this.$store.state.inputData.ctrl
+//             },
+//             title() {
+//                 switch (this.ctrl) {
+//                     case 'weixin':
+//                         return '微信'
+//                         break;
+//                     case 'weibo':
+//                         return '微博'
+//                         break;
+//                     case 'toutiao':
+//                         return '头条'
+//                         break;
+//                     case 'material':
+//                         return '选择图文素材'
+//                         break;
+//                     default:
+//                         break;
 
-                }
-            },
-            outputData() {//插件使用者输出数据
-                var list = this.$store.state.lis;
-                let temp = [];
-                if(this.ctrl==='material'){
-                    list=this.$store.state.materialData
-                }
-                Object.values(list).forEach(item => {
-                    if (this.checkedArr.indexOf(item.id) != -1) {
-                        temp.push(item)
-                    }
-                })
-                console.log(temp);
-                return temp
-            }
-        },
-        methods: {
-            close() {
-                this.$store.commit('m_checkedArr', [])
-                $('#pops').css('display', 'none')
+//                 }
+//             },
+//             outputData() {//插件使用者输出数据
+//                 var list = this.$store.state.lis;
+//                 let temp = [];
+//                 if(this.ctrl==='material'){
+//                     list=this.$store.state.materialData
+//                 }
+//                 Object.values(list).forEach(item => {
+//                     if (this.checkedArr.indexOf(item.id) != -1) {
+//                         temp.push(item)
+//                     }
+//                 })
+//                 console.log(temp);
+//                 return temp
+//             }
+//         },
+//         methods: {
+//             close() {
+//                 this.$store.commit('m_checkedArr', [])
+//                 $('#pops').css('display', 'none')
 
-            },
-            save() {
-                // 初始化
-                this.$store.commit('m_checkedArr', [])
-            },
+//             },
+//             save() {
+//                 // 初始化
+//                 this.$store.commit('m_checkedArr', [])
+//             },
+
+//         }
+
+//     }
+//     Object.assign(vueOpt.methods, userOpt.vueOpt.methods)
+
+//     this.vuePops=new Vue(vueOpt);
+//     createPop.prototype.setInputData = function(obj) {
+//       Object.assign(this.vuePops.$store.state,obj)
+//     }
+
+// }
+
+
+
+class CreatePop {
+    constructor(userOpt) {
+        if (typeof userOpt.STATIC_PATH != 'undefined') {
+            STATIC_PATH = userOpt.STATIC_PATH
 
         }
+        // Object.assign(storeOpt.state.inputData, userOpt.storeOpt.inputData)
+        var vueOpt = {
+            el: '#pops',
+            store,
+            computed: {
+                checkedArr() {
+                    return this.$store.state.checkedArr
+                },
+                ctrl() {
+                    return this.$store.state.inputData.ctrl
+                },
+                title() {
+                    switch (this.ctrl) {
+                        case 'weixin':
+                            return '微信'
+                            break;
+                        case 'weibo':
+                            return '微博'
+                            break;
+                        case 'toutiao':
+                            return '头条'
+                            break;
+                        case 'material':
+                            return '选择图文素材'
+                            break;
+                        default:
+                            break;
 
+                    }
+                },
+                outputData() { //插件使用者输出数据
+                    var list = this.$store.state.lis;
+                    let temp = [];
+                    if (this.ctrl === 'material') {
+                        list = this.$store.state.materialData
+                    }
+                    Object.values(list).forEach(item => {
+                        if (this.checkedArr.indexOf(item.id) != -1) {
+                            temp.push(item)
+                        }
+                    })
+                    console.log(temp);
+                    return temp
+                }
+            },
+            methods: {
+                close() {
+                    this.$store.commit('m_checkedArr', [])
+                    $('#pops').css('display', 'none')
+
+                },
+                save() {
+                    // 初始化
+                    this.$store.commit('m_checkedArr', [])
+                },
+
+            }
+
+        }
+        Object.assign(vueOpt.methods, userOpt.vueOpt.methods)
+        this.vuePops = new Vue(vueOpt);
     }
-    Object.assign(vueOpt.methods, userOpt.vueOpt.methods)
-
-    this.vuePops=new Vue(vueOpt);
-    createPop.prototype.setInputData = function(obj) {
-      Object.assign(this.vuePops.$store.state,obj)
+    setInputData(obj) {
+        Object.assign(this.vuePops.$store.state, obj)
     }
 
 }

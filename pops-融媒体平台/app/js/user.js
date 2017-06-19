@@ -8,11 +8,11 @@
       }
     }
   }
-  var o= new createPop(userOpt);
+  var o= new CreatePop(userOpt);
 
 
 //S-测试DEMO可删
-// setTimeout(function(){
+setTimeout(function(){
   let obj={
     inputData:{
       ctrl:'material',//weixin,toutiao,weibo,material
@@ -21,5 +21,5 @@
   }
   o.setInputData(obj);
 //
-// },2000)
+},2000)
 //E-测试DEMO可删
