@@ -1,6 +1,6 @@
 <template>
     <section>
-        调试
+      <p>调试</p>
     </section>
 </template>
 

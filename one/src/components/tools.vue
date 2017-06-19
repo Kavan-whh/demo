@@ -1,7 +1,10 @@
 <template>
-<section>
-  工具
-</section>
+  <section>
+    <p>工具</p>
+    <ul>
+      <li>sf</li>
+    </ul>
+  </section>
 </template>
 <script>
 export default {
@@ -11,5 +14,8 @@ export default {
 <style lang="scss" scoped>
 section{
     color: red
+    li{
+      background:red;
+    }
 }
 </style>

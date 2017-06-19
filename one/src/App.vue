@@ -1,33 +1,39 @@
 <template>
-  <div id="app">
-  
-    <el-row>
-      <!--  工具箱-->
-      <el-col :span="4">
-        <p>工具箱</p>
-        <!--<my-tools></my-tools>-->
-      </el-col>
-  
-      <!-- 画布展示区 -->
-      <el-col :span="16">
-        <!--<router-link to="/" tag="p" class="routerSec">画布</router-link>
+<div id="app">
+
+  <el-row>
+    <!--  工具箱-->
+    <el-col :span="4">
+      <tools></tools>
+    </el-col>
+
+    <!-- 画布展示区 -->
+    <el-col :span="16">
+      <!--<router-link to="/" tag="p" class="routerSec">画布</router-link>
         <router-link to="/temp" tag="p" class="routerSec">Temp</router-link>
         <router-view></router-view>-->
-        <p>fsd</p>
-      </el-col>
-  
-      <!-- 调试区 -->
-      <el-col :span="4">
-        <p>调试区</p>
-      </el-col>
-    </el-row>
-    <!--<router-view></router-view>-->
-  </div>
+      <show></show>
+    </el-col>
+
+    <!-- 调试区 -->
+    <el-col :span="4">
+      <m-detail></m-detail>
+    </el-col>
+  </el-row>
+  <!--<router-view></router-view>-->
+</div>
 </template>
 
 <script>
+import Tools from 'components/tools.vue'
+import MDetail from 'components/detail.vue'
+import Show from 'components/show.vue'
 export default {
-  name: 'app'
+  components: {
+    Tools,
+    MDetail,
+    Show
+  }
 }
 </script>
 
