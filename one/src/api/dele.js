@@ -2,6 +2,7 @@
 // initData是一个数组
 
 {
+  id:0,// 唯一识别
   type:duoxuan,//判断我将数据传入哪个组件
   data:initData //该组件的数据
   x:left//该组件的xy left,top

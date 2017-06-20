@@ -3,10 +3,10 @@
 <section class="show__wrap">
   <p>展示区</p>
 
-  <div v-for="item in initData">
+  <div class="panel" v-for="item in initData">
     <m-input v-if="item.type===0" :input="item.data" :x="item.x" :y="item.y"></m-input>
     <duo-xuan v-if="item.type==1" :input="item.data" :x="item.x" :y="item.y"></duo-xuan>
-    <duo-hang v-if="item.type==2" :input="item.data" :x="item.x" :y="item.y"></duo-hang>
+    <duo-hang  v-if="item.type==2" :input="item.data" :x="item.x" :y="item.y"></duo-hang>
   </div>
 
 </section>
@@ -77,10 +77,21 @@ export default {
     width: 100%;
     height: 500px;
     background: wheat;
-    position: relative;
     .show__bd {
         position: relative;
         height: 100%;
     }
+}
+.panel{
+  position: relative;
+  &>section{
+    position: absolute;
+    -webkit-user-drag: element;
+    cursor: move;
+    -webkit-user-select: none;
+  }
+  &>div{
+    position: absolute;
+  }
 }
 </style>

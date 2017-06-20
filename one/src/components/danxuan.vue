@@ -18,4 +18,7 @@ export default {
 </script>
 
 <style lang="css">
+section{
+  width: 100px;
+}
 </style>

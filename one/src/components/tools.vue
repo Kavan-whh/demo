@@ -2,7 +2,8 @@
 <section >
   <p>工具</p>
   <ul>
-    <li class="element" @dragend="createElement(0)">我是图片</li>
+    <li class="element" @dragend="createElement(0)">我是输入框</li>
+    <li class="element" @dragend="createElement(1)">我是单选</li>
   </ul>
 </section>
 </template>
