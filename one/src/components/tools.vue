@@ -7,10 +7,18 @@
 </section>
 </template>
 <script>
+import {
+  mapMutations,
+  mapState
+} from 'vuex'
 export default {
+  computed: {
+    ...mapState([])
+  },
   methods: {
+    ...mapMutations(['M_ISCREATE']),
     createElement() {
-      console.log('sdfl')
+      this.M_ISCREATE(true)
     }
   }
 

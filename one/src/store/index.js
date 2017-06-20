@@ -7,7 +7,7 @@ import actions from './actions.js'
 
 Vue.use(Vuex)
 const state = {
-
+  isCreat: false// 变为ture时创建
 }
 
 export default new Vuex.Store({
