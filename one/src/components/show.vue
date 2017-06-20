@@ -2,7 +2,6 @@
 <section @mousemove="getMousePos">
   <p>展示区</p>
   <div class="">
-    {{}}
 
   </div>
 
