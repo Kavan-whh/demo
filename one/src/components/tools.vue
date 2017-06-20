@@ -1,8 +1,8 @@
 <template>
-<section @dragend="createElement()">
+<section >
   <p>工具</p>
   <ul>
-    <li class="element">我是图片</li>
+    <li class="element" @dragend="createElement(0)">我是图片</li>
   </ul>
 </section>
 </template>
@@ -16,9 +16,9 @@ export default {
     ...mapState([])
   },
   methods: {
-    ...mapMutations(['M_ISCREATE']),
-    createElement() {
-      this.M_ISCREATE(true)
+    ...mapMutations(['M_CREATE']),
+    createElement(type) {
+      this.M_CREATE({type: type, isCreat: true})
     }
   }
 

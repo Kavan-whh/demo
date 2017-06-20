@@ -7,7 +7,8 @@ import actions from './actions.js'
 
 Vue.use(Vuex)
 const state = {
-  isCreat: false// 变为ture时创建
+  isCreat: false, // 变为ture时创建
+  type: 0 // 创建的类型
 }
 
 export default new Vuex.Store({

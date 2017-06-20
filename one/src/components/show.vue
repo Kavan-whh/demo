@@ -1,8 +1,9 @@
 <template>
-<section class="show__wrap" @mousemove="getMousePos">
+<!-- <section class="show__wrap" @mousemove="getMousePos"> -->
+<section class="show__wrap">
   <p>展示区</p>
 
-  <div v-for="item in initData" >
+  <div v-for="item in initData">
     <m-input v-if="item.type===0" :input="item.data" :x="item.x" :y="item.y"></m-input>
     <duo-xuan v-if="item.type==1" :input="item.data" :x="item.x" :y="item.y"></duo-xuan>
     <duo-hang v-if="item.type==2" :input="item.data" :x="item.x" :y="item.y"></duo-hang>
@@ -37,24 +38,22 @@ export default {
       const scrollY = document.documentElement.scrollTop || document.body.scrollTop
       const x = e.pageX - 220 || e.clientX + scrollX
       const y = e.pageY - 77 || e.clientY + scrollY
-      // console.log(x, y)
       return {
         'x': x,
         'y': y
       }
     },
     createEle() {
-      let temp = this.getMousePos() // 得到此刻的坐标
-      this.styleData = {
-        left: temp.x + 'px',
-        top: temp.y + 'px',
-        width: '24%'
+      const temp = {
+        type: this.type,
+        data: {}
       }
-      this.n++ // 创建
+      const obj = Object.assign({}, temp, this.getMousePos())
+      this.initData.push(obj)
     }
   },
   computed: {
-    ...mapState(['isCreat'])
+    ...mapState(['isCreat', 'type'])
   },
   watch: {
     isCreat(newVal) {
