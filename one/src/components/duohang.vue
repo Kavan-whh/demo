@@ -10,7 +10,12 @@
 
 <script>
 export default {
-  props: ['input']
+  props: ['input'],
+  computed:{
+    render(){
+
+    }
+  }
 
 }
 </script>

@@ -5,8 +5,8 @@
   </div> -->
 
   <div class="" v-for="item in initData" >
-    <m-input v-if="item.type===0" :input="item.data" ></m-input>
-    <one v-if="item.type==1" :input="item.data"></one>
+    <m-input v-if="item.type===0" :input="item.data" :x="item.x" :y="item.y"></m-input>
+    <one v-if="item.type==1" :input="item.data" :x="item.x" :y="item.y"></one>
     <two v-if="item.type==2"></two>
     <three v-if="item.type==3"></three>
   </div>
