@@ -6,9 +6,8 @@
 
   <div class="" v-for="item in initData" >
     <m-input v-if="item.type===0" :input="item.data" :x="item.x" :y="item.y"></m-input>
-    <one v-if="item.type==1" :input="item.data" :x="item.x" :y="item.y"></one>
-    <two v-if="item.type==2"></two>
-    <three v-if="item.type==3"></three>
+    <duo-xuan v-if="item.type==1" :input="item.data" :x="item.x" :y="item.y"></duo-xuan>
+    <duo-hang v-if="item.type==2"></duo-hang>
   </div>
 
 </section>
@@ -16,8 +15,8 @@
 
 <script>
 import MInput from 'components/input.vue'
-import Duoxuan from 'components/danxuan.vue'
-import Duohang from 'components/duohang.vue'
+import DuoXuan from 'components/danxuan.vue'
+import DuoHang from 'components/duohang.vue'
 import {
   mapState,
   mapMutations
@@ -70,8 +69,8 @@ export default {
   },
   components: {
     MInput,
-    Duohang,
-    Duoxuan
+    DuoHang,
+    DuoXuan
   }
 }
 </script>

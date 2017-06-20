@@ -9,13 +9,9 @@
 </template>
 
 <script>
+import mixins from 'common/js/mixins'
 export default {
-  props: ['input'],
-  computed:{
-    render(){
-
-    }
-  }
+  extend: mixins
 
 }
 </script>

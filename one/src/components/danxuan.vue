@@ -10,8 +10,10 @@
 </template>
 
 <script>
+import mixins from 'common/js/mixins'
 export default {
-  props: ['input']
+  extend: mixins
+
 }
 </script>
 
