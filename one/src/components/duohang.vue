@@ -1,5 +1,5 @@
 <template lang="html">
-  <section :style="input">
+  <section :style="styleData">
     <label for="">多行文本框</label>
     <div class="">
       <textarea name="name" rows="8" cols="80"></textarea>
@@ -11,7 +11,7 @@
 <script>
 import mixins from 'common/js/mixins'
 export default {
-  extend: mixins
+  mixins: [mixins]
 
 }
 </script>

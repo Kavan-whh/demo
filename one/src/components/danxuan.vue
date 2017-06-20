@@ -1,5 +1,5 @@
 <template lang="html">
-  <section :style="input">
+  <section :style="styleData">
     <label for="">单选框</label>
     <div class="">
       <input type="radio" name="" value="">
@@ -12,7 +12,7 @@
 <script>
 import mixins from 'common/js/mixins'
 export default {
-  extend: mixins
+  mixins: [mixins]
 
 }
 </script>

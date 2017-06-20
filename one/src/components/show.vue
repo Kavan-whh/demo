@@ -1,13 +1,11 @@
 <template>
 <section class="show__wrap" @mousemove="getMousePos">
   <p>展示区</p>
-  <!-- <div class="show__bd">
-  </div> -->
 
-  <div class="" v-for="item in initData" >
+  <div v-for="item in initData" >
     <m-input v-if="item.type===0" :input="item.data" :x="item.x" :y="item.y"></m-input>
     <duo-xuan v-if="item.type==1" :input="item.data" :x="item.x" :y="item.y"></duo-xuan>
-    <duo-hang v-if="item.type==2"></duo-hang>
+    <duo-hang v-if="item.type==2" :input="item.data" :x="item.x" :y="item.y"></duo-hang>
   </div>
 
 </section>

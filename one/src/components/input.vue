@@ -1,6 +1,5 @@
 <template lang="html">
-  <section :style="input" v-html="styleData">
-  <!-- <section :style="styleData"> -->
+  <section :style="styleData">
     <span>说明</span>
     <input type="text" name="" value="">
   </section>
