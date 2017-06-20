@@ -1,7 +1,7 @@
 <template lang="html">
   <section :style="style">
     <span>说明</span>
-    <input type="text" name="" value="">
+    <input type="text" name="" value="" :style="inputStyle">
   </section>
 </template>
 
@@ -12,7 +12,12 @@ export default {
     return {
       style: {
         left: 0,
-        top: 0
+        top: 0,
+        width: '22%'
+      },
+      inputStyle: {
+        // width: '22%'
+        // height: '100%'
       }
     }
   }
