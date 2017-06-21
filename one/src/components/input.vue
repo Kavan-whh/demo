@@ -1,5 +1,6 @@
 <template lang="html">
-  <section :style="styleData" class="box">
+  <!-- <section @dragstart="trigger(event)" :style="styleData"  class="box"> -->
+  <section  :style="styleData"  class="box">
     <span>说明</span>
     <input type="text" name="" value="">
   </section>
@@ -11,11 +12,20 @@ import drage from 'common/js/drage'
 export default {
   mixins: [mixins],
   mounted() {
-    const oBox = document.getElementsByClassName('box')[0]
+    const obj = document.getElementsByClassName('box')[0]
     let cb = function(data) {
       console.log(data)
     }
-    drage(oBox, oBox, cb)
+    drage(obj, obj, cb)
+  },
+  methods: {
+    trigger() {
+      // const obj = e.target
+      // let cb = function(data) {
+      //   console.log(data)
+      // }
+      // this.drage(obj, cb)
+    }
   }
 
 }

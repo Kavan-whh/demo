@@ -7,7 +7,10 @@ var params = {// 容器
 	currentY: 0,
 	flag: false
 };
-export default  function drage (bar, target,cb) {
+export default  function drage (bar, target, cb) {
+	if(!target) {
+		target = bar
+	}
 	// 初始化
   if (getCss(target, 'left') !== 'auto') {
     params.left = getCss(target, 'left')
@@ -29,7 +32,8 @@ export default  function drage (bar, target,cb) {
     params.currentY = e.clientY
   };
 
-  document.onmouseup = function() {
+  // document.onmouseup = function() {
+  target.onmouseup = function() {
     params.flag = false
     if (getCss(target, 'left') !== 'auto') {
       params.left = getCss(target, 'left')
@@ -43,7 +47,8 @@ export default  function drage (bar, target,cb) {
   };
 
 
-  document.onmousemove = function(event) {
+  // document.onmousemove = function(event) {
+  target.onmousemove = function(event) {
     let e = event ? event : window.event
     if (params.flag) {
       let nowX = e.clientX,

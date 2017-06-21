@@ -13,7 +13,6 @@
 import mixins from 'common/js/mixins'
 export default {
   mixins: [mixins]
-
 }
 </script>
 
