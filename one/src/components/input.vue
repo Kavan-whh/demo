@@ -8,41 +8,53 @@
 
 <script>
 import mixins from 'common/js/mixins'
-import drage from 'common/js/drage'
+// import drage from 'common/js/drage'
 export default {
   mixins: [mixins],
   mounted() {
-    const params = { // 容器
+    var params = { // 容器
       left: 0,
       top: 0,
       currentX: 0,
       currentY: 0,
-      flag: false
+      flag: false,
+      ele: null
     }
+    const self = this
+
     $('.huabu').delegate('.box', 'mousedown', function(event) {
-      params.ele = this
-      params.flag = true
+      params.ele = $(this)
+      const target = params.ele
       const e = event
+      // 初始化
+      params.flag = true
+      if (self.getCss(target, 'left') !== 'auto') {
+        params.left = self.getCss(target, 'left')
+      }
+      if (self.getCss(target, 'top') !== 'auto') {
+        params.top = self.getCss(target, 'top')
+      }
       params.currentX = e.clientX
       params.currentY = e.clientY
     })
-    // $(document).delegate(('*', 'mouseup', function() {
-    //   console.log(this)
-    //   params.flag = false
-    //   const target = $(this)
-    //   if (self.getCss(target, 'left') !== 'auto') {
-    //     params.left = self.getCss(target, 'left')
-    //   }
-    //   if (self.getCss(target, 'top') !== 'auto') {
-    //     params.top = self.getCss(target, 'top')
-    //   }
-    // })
+    $(document).delegate('*', 'mouseup', function() {
+      // console.log(this)
+      const target = params.ele
+      if (self.getCss(target, 'left') !== 'auto') {
+        params.left = self.getCss(target, 'left')
+      }
+      if (self.getCss(target, 'top') !== 'auto') {
+        params.top = self.getCss(target, 'top')
+      }
+      console.log(params)
+      params.flag = false
+      params.ele = null
+    })
     $('.huabu').mousemove(function() {
       if (!params.flag) {
         return
       }
-      // $(document).mousemove(function() {
-      const target = $(this)
+      const target = params.ele
       const e = event || window.event
       const nowX = e.clientX
       const nowY = e.clientY
@@ -52,6 +64,11 @@ export default {
       target.css('left', parseInt(params.left) + disX + 'px')
       target.css('top', parseInt(params.top) + disY + 'px')
     })
+  },
+  methods: {
+    getCss(o, key) {
+      return o.css(key)
+    }
   }
 }
 </script>

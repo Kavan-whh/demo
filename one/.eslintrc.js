@@ -31,6 +31,7 @@ module.exports = {
    'space-before-function-paren': 0,
    'no-unused-vars': 1,// 不能有未声明变量没有使用
    'no-unreachable': 1, //不能有未执行的代码return
-   'no-trailing-spaces': 1 // 不能有空行
+   'no-trailing-spaces': 1, // 不能有空行
+   'semi': 0
   }
 }

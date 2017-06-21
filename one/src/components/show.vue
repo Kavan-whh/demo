@@ -1,6 +1,6 @@
 <template>
 <!-- <section class="show__wrap" @mousemove="getMousePos"> -->
-<section class="show__wrap">
+<section class="show__wrap huabu">
   <p>展示区</p>
 
   <div class="panel" v-for="item in initData">
