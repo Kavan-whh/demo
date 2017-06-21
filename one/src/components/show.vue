@@ -86,9 +86,9 @@ export default {
   position: relative;
   &>section{
     position: absolute;
-    -webkit-user-drag: element;
-    cursor: move;
-    -webkit-user-select: none;
+    // -webkit-user-drag: element;
+    // cursor: move;
+    // -webkit-user-select: none;
   }
   &>div{
     position: absolute;

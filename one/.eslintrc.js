@@ -8,6 +8,10 @@ module.exports = {
   },
   env: {
     browser: true,
+    jquery: true,
+    node:true,
+    commonjs:true,
+    es6:true
   },
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
   extends: 'standard',
