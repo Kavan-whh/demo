@@ -8,7 +8,9 @@
     <duo-xuan class="box"  v-if="item.type==1" :input="item.data" :x="item.x" :y="item.y"></duo-xuan>
     <duo-hang  class="box"  v-if="item.type==2" :input="item.data" :x="item.x" :y="item.y"></duo-hang>
   </div>
-
+  <div class="btn" @click="save">
+    保存
+  </div>
 </section>
 </template>
 
@@ -21,17 +23,15 @@ import {
   mapMutations
 } from 'vuex'
 
-import initData from 'api/initData'
 export default {
   data() {
     return {
-      initData,
       n: 0,
       styleData: {}
     }
   },
   methods: {
-    ...mapMutations(['M_ISCREATE']),
+    ...mapMutations(['M_ISCREATE', 'SAVE']),
     getMousePos(event) {
       const e = event || window.event
       const scrollX = document.documentElement.scrollLeft || document.body.scrollLeft
@@ -50,10 +50,13 @@ export default {
       }
       const obj = Object.assign({}, temp, this.getMousePos())
       this.initData.push(obj)
+    },
+    save() {
+      this.SAVE(this.initData)
     }
   },
   computed: {
-    ...mapState(['isCreat', 'type'])
+    ...mapState(['isCreat', 'type', 'initData'])
   },
   watch: {
     isCreat(newVal) {
@@ -73,6 +76,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.btn{
+  background-color: blue;
+  cursor: pointer;
+  width: 15%;
+  margin: 0 auto;
+  color: #fff;
+}
 .show__wrap {
     width: 100%;
     height: 500px;
