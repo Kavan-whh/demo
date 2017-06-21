@@ -32,8 +32,8 @@ export default  function drage (bar, target, cb) {
     params.currentY = e.clientY
   };
 
-  // document.onmouseup = function() {
-  target.onmouseup = function() {
+  document.onmouseup = function() {
+  // target.onmouseup = function() {
     params.flag = false
     if (getCss(target, 'left') !== 'auto') {
       params.left = getCss(target, 'left')
@@ -41,14 +41,14 @@ export default  function drage (bar, target, cb) {
     if (getCss(target, 'top') !== 'auto') {
       params.top = getCss(target, 'top')
     }
-		if(cb){
+		if(cb) {
 			cb(params)
 		}
   };
 
 
-  // document.onmousemove = function(event) {
-  target.onmousemove = function(event) {
+  document.onmousemove = function(event) {
+  // target.onmousemove = function(event) {
     let e = event ? event : window.event
     if (params.flag) {
       let nowX = e.clientX,
