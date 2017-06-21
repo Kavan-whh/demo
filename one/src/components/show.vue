@@ -4,9 +4,9 @@
   <p>展示区</p>
 
   <div class="panel" v-for="item in initData">
-    <m-input v-if="item.type===0" :input="item.data" :x="item.x" :y="item.y"></m-input>
-    <duo-xuan v-if="item.type==1" :input="item.data" :x="item.x" :y="item.y"></duo-xuan>
-    <duo-hang  v-if="item.type==2" :input="item.data" :x="item.x" :y="item.y"></duo-hang>
+    <m-input class="box" v-if="item.type===0" :input="item.data" :x="item.x" :y="item.y"></m-input>
+    <duo-xuan class="box"  v-if="item.type==1" :input="item.data" :x="item.x" :y="item.y"></duo-xuan>
+    <duo-hang  class="box"  v-if="item.type==2" :input="item.data" :x="item.x" :y="item.y"></duo-hang>
   </div>
 
 </section>

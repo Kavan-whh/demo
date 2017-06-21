@@ -1,6 +1,6 @@
 <template lang="html">
   <!-- <section @dragstart="trigger(event)" :style="styleData"  class="box"> -->
-  <section  :style="styleData"  class="box">
+  <section  :style="styleData" >
     <span>说明</span>
     <input type="text" name="" value="">
   </section>
