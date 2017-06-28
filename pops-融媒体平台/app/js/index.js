@@ -335,3 +335,53 @@ class CreatePop {
     }
 
 }
+
+
+
+//  var userOpt={
+//     STATIC_PATH:"./",//资源根目录:图片
+//     vueOpt:{
+//       methods:{//可写关闭close(),保存方法（）进行替换
+
+//       }
+//     }
+//   }
+  var userOpt = {
+    STATIC_PATH: "./", //资源根目录:图片
+    vueOpt: {
+        methods: { //可写关闭close(),保存方法（）进行替换
+            save: function save() {
+                if (this.ctrl == 'material') {
+                    if (this.outputData.length != 0) {
+                        vm.present.material = this.outputData;
+                        vm.typelist.news = vm.present.material[0];
+                        ue.setContent(vm.present.material[0].inner);
+                    } else {
+                        vm.present.material = this.outputData;
+                        vm.typelist.news = "";
+                        ue.setContent("");
+                    }
+                } else {
+
+                    vm.present.checkList = this.outputData;
+
+                }
+                Vue.nextTick(function () {
+                    sendHeight();
+                    $('.screen').width($('.sendlist').width() - $('.sendlist .left').width() - $('.sendlist .btn').width()-57 );
+                });
+
+                $('#pops').css('display', 'none');
+                this.$store.commit('m_checkedArr', []);
+                Vue.nextTick(function () {
+                    upload();
+                });
+            },
+            close: function close() {
+                $('#pops').css('display', 'none');
+                this.$store.commit('m_checkedArr', []);
+            }
+        }
+    }
+};
+  vuepop = new CreatePop(userOpt);
